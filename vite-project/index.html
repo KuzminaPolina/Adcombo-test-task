@@ -3,11 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="simple_timer" style="background: #fff; color: #000">
+      <span class="hours">00</span>:<span class="minutes">28</span>:<span class="seconds">12</span>
+    </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="content-wrapper">
+            <p class="text">50<span>CR</span><span class="price">/$5</span></p>
+            <button class="button">Buy now</button>           
+          </div>
+          <div class="label">One time offer!</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="content-wrapper">
+            <p class="text">150<span>CR</span><span class="price">/$5</span></p>
+            <button class="button">Buy now</button>            
+          </div>
+          <div class="label">One time offer!</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="content-wrapper">
+            <p class="text">300<span>CR</span><span class="price">/$5</span></p>
+            <button class="button">Buy now</button>           
+          </div>
+          <div class="label">One time offer!</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="content-wrapper">
+            <p class="text">300<span>CR</span><span class="price">/$5</span></p>
+            <button class="button">Buy now</button>            
+          </div>
+          <div class="label">One time offer!</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="content-wrapper">
+            <p class="text">500<span>CR</span><span class="price">/$5</span></p>
+            <button class="button">Buy now</button>            
+          </div>
+          <div class="label">One time offer!</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="content-wrapper">
+            <p class="text">1000<span>CR</span><span class="price">/$5</span></p>
+            <button class="button">Buy now</button>            
+          </div>
+          <div class="label">One time offer!</div>
+        </div>
+      </div>
+      <div class="slider__pagination swiper-pagination">
+      </div>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
