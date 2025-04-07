@@ -3,7 +3,7 @@ import { start_timer } from './timer.js';
 import {Swiper} from "swiper/bundle";
 import "swiper/css/bundle";
 
-start_timer("simple_timer", 28.2);
+start_timer("simple_timer");
 
 
 const initMobileOnlySlider = () => {

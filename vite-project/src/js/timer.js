@@ -24,27 +24,27 @@ function write_timer(elements, time) {
   }
 }
   
-export function start_timer(className, minutes = 0) {
-  let time;
-  if (minutes) {
-    time = minutes * 60;
-    if (get_cookie("time")) {
-    time = parseInt(get_cookie("time"), 10);
-    } else {
-    set_cookie("time", time, 1);
-    }
-  } else
-    time = Math.floor(
-    (new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1) - new Date()) / 1000
-    );
+export function start_timer(className) {
+  let oldHour = parseInt(document.querySelector(".hours").getAttribute("data-hours"), 10);
+  let oldMins = parseInt(document.querySelector(".minutes").getAttribute("data-minutes"), 10);
+  let oldSecs = parseInt(document.querySelector(".seconds").getAttribute("data-seconds"), 10);
+
+  let totalTime;
+  let resetTime = (oldHour * 3600) + (oldMins * 60) + oldSecs;
+  if (get_cookie("time")) {
+    totalTime = parseInt(get_cookie("time"), 10);
+  } else {
+    totalTime = (oldHour * 3600) + (oldMins * 60) + oldSecs;
+  };
   let elements = document.getElementsByClassName(className);
-  write_timer(elements, time);
+  write_timer(elements, totalTime);
   const timerInterval = setInterval(() => {
-      write_timer(elements, time);
-      set_cookie("time", --time, 1);
-      if (time < 0) {
-      clearInterval(timerInterval);
-      set_cookie("time", "", -1);
+      write_timer(elements, totalTime);
+      set_cookie("time", --totalTime, 1);
+      if (totalTime < 0) {
+      totalTime = resetTime;
+      write_timer(elements, totalTime);
+      set_cookie("time", --totalTime, 1);
       }
     }, 1000);
   };
